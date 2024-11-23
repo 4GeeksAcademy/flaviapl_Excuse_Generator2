@@ -5,29 +5,35 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-let who = ["The dog", "My grandma", "The mailman", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "my phone", "the car"];
-let when = [
-  "before the class",
-  "when I was sleeping",
-  "while I was exercising",
-  "during my lunch",
-  "while I was praying"
-];
-
 window.onload = function() {
-  let whoRandom = Math.floor(Math.random() * who.length);
-  let actionRandom = Math.floor(Math.random() * action.length);
-  let whatRandom = Math.floor(Math.random() * what.length);
-  let whenRandom = Math.floor(Math.random() * when.length);
+  let who = ["The dog", "My grandma", "The mailman", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "my phone", "the car"];
+  let when = [
+    "before the class",
+    "when I was sleeping",
+    "while I was exercising",
+    "during my lunch",
+    "while I was praying"
+  ];
 
-  document.querySelector("#Excuse").innerHTML =
-    who[whoRandom] +
-    " " +
-    action[actionRandom] +
-    " " +
-    what[whatRandom] +
-    " " +
-    when[whenRandom];
+  function randomElement(array) {
+    let randomArray = Math.floor(Math.random() * array.length); //calcula solo un num aleatorio
+    return array[randomArray];  
+  }
+
+  let randomWho = randomElement(who);
+  let randomAction = randomElement(action);
+  let randomWhat = randomElement(what);
+  let randomWhen = randomElement(when);
+
+  console.log(randomWho);
+  console.log(randomAction);
+  console.log(randomWhat);
+  console.log(randomWhen);
+
+  document.querySelector(
+    "#Excuse"
+  ).innerHTML = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
+
 };
