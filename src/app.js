@@ -17,23 +17,17 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  function randomElement(array) {
+  function getRandomElement(array) {
     let randomArray = Math.floor(Math.random() * array.length); //calcula solo un num aleatorio
-    return array[randomArray];  
+    return array[randomArray];
   }
 
-  let randomWho = randomElement(who);
-  let randomAction = randomElement(action);
-  let randomWhat = randomElement(what);
-  let randomWhen = randomElement(when);
-
-  console.log(randomWho);
-  console.log(randomAction);
-  console.log(randomWhat);
-  console.log(randomWhen);
+  let randomWhoItem = getRandomElement(who);
+  let randomActionItem = getRandomElement(action);
+  let randomWhatItem = getRandomElement(what);
+  let randomWhenItem = getRandomElement(when);
 
   document.querySelector(
     "#Excuse"
-  ).innerHTML = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
-
+  ).innerHTML = `${randomWhoItem} ${randomActionItem} ${randomWhatItem} ${randomWhenItem}`;
 };
